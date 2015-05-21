@@ -1,4 +1,4 @@
-fe46ef7901928f91d2f78d8386712c3e *DESCRIPTION
+aaaa0289b1c6d027a7c7cc5faf533640 *DESCRIPTION
 a320fddb4345ecd48386118a42595c60 *LICENSE
 999d8d1363076d421e2ced7efc99b08a *NAMESPACE
 97ad10e1cfdb8a6865114e19ab666da7 *R/AlphaRep.R
@@ -108,8 +108,6 @@ f785635c468b232bb0563b6f44d7ff5d *man/TreeDriftTest.Rd
 a304b2925f6769fdaca7502f0791e665 *man/dentus.Rd
 a6d8d89c24d67e73cfc3f80b9189c084 *man/dentus.tree.Rd
 6192ba2409d03e6f9dd1966f831b558e *man/evolqg.Rd
-9941296949d3b03d307d83bda5d1311e *src/Makevars
-045ca0d6589875e2bf0ee4784ae671e4 *src/Makevars.win
 9337ab4c592aef79839e39eefc54e45b *src/RcppExports.cpp
 67f736c1f1ca254fc5aa761810df174e *src/l-modularity.cpp
 1f40b85cfb841d67b36342d1c69a628c *tests/run-all.R
