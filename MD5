@@ -1,4 +1,4 @@
-aaaa0289b1c6d027a7c7cc5faf533640 *DESCRIPTION
+215dbc364d2db9722262de62f70499d7 *DESCRIPTION
 a320fddb4345ecd48386118a42595c60 *LICENSE
 999d8d1363076d421e2ced7efc99b08a *NAMESPACE
 97ad10e1cfdb8a6865114e19ab666da7 *R/AlphaRep.R
@@ -36,7 +36,7 @@ c388cf400183e0b3f0c27446b77a1e35 *R/Rarefaction.R
 a36b7f79d2ec0396b5276d84ffe26dda *R/SRD.R
 39ef7e4cff6355de7ef0bd923f09230d *R/SingleComparisonMap.R
 a34cb7ce06642c142dd967a8d3342b97 *R/TestModularity.R
-00f499d60c35c84b2a0fabee9d0c6a28 *R/l_modularity.R
+bbd70bf3eb7b73bab94d985b19a14b39 *R/l_modularity.R
 6a80fdc264926f63c3e295103910aa86 *data/dentus.rda
 dfdba58a7db15254aa73586b54f34011 *data/dentus.tree.rda
 0e5f5d220a1fadd6dcfa405204e95257 *inst/tests/iris.stats
@@ -109,5 +109,5 @@ a304b2925f6769fdaca7502f0791e665 *man/dentus.Rd
 a6d8d89c24d67e73cfc3f80b9189c084 *man/dentus.tree.Rd
 6192ba2409d03e6f9dd1966f831b558e *man/evolqg.Rd
 9337ab4c592aef79839e39eefc54e45b *src/RcppExports.cpp
-67f736c1f1ca254fc5aa761810df174e *src/l-modularity.cpp
+0692cfe4a7d97a9f75ca8ca55279d3d7 *src/l-modularity.cpp
 1f40b85cfb841d67b36342d1c69a628c *tests/run-all.R

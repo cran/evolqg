@@ -1,7 +1,7 @@
 Package: evolqg
 Type: Package
 Title: Tools for Evolutionary Quantitative Genetics
-Version: 0.1-4
+Version: 0.1-5
 Date: 2015-05-18
 Author: Ana Paula Assis, Diogo Melo, Edgar Zanella, Fabio Machado, Guilherme Garcia
 Maintainer: Diogo Melo <diogro@usp.br>
@@ -14,6 +14,6 @@ LinkingTo: Rcpp
 License: MIT + file LICENSE
 BugReports: https://github.com/lem-usp/evolqg/issues
 NeedsCompilation: yes
-Packaged: 2015-05-21 18:02:32 UTC; diogro
+Packaged: 2015-05-21 18:56:15 UTC; diogro
 Repository: CRAN
-Date/Publication: 2015-05-21 20:10:21
+Date/Publication: 2015-05-22 07:32:18
