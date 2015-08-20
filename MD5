@@ -1,4 +1,4 @@
-fa773a3dea5836f19b7ab04771af45db *DESCRIPTION
+4cd16919fc5f25f6251e828bb86710fe *DESCRIPTION
 a320fddb4345ecd48386118a42595c60 *LICENSE
 07136df3d80519371ac0f881a5f5b742 *NAMESPACE
 97ad10e1cfdb8a6865114e19ab666da7 *R/AlphaRep.R
@@ -20,7 +20,7 @@ b31ce24b70c7d1d07b8e8e2a8ca6bc71 *R/MatrixCompare.R
 7b09bfac7e650c2be93c3be4174b81c4 *R/MatrixDistance.R
 ee3fb62a3ec4d4ab17ab292aa8b14276 *R/MatrixStatistics.R
 64c53d4f2ce66ec96e670ed00aaaf01e *R/MonteCarloStat.R
-4ace39ca248f5ed1ec34c7f736cd0875 *R/MultiMahalanobis.R
+6f63dc6dda072b3325d460f1898fe0e4 *R/MultiMahalanobis.R
 e241d4dfd29b95b57b61fbc849d13def *R/Normalize.R
 a98a8d5812aa97dca9a08930dfe9fd90 *R/PCAsimilarity.R
 6cf96d2b79126cf69480625481733e1e *R/PCScoreCorrelation.R
@@ -55,7 +55,7 @@ c45d52bb2c68f3860694dfb3def19054 *inst/tests/test.ExtendMatrix.r
 589ec4337a668ce94315e89316be2d4f *inst/tests/test.MatrixDistances.r
 613cd4bdb00aad9c9e8654c698d816d6 *inst/tests/test.MatrixStatistics.r
 f36ac918266142695dc10d01ab08f12c *inst/tests/test.MonteCarloStat.r
-a1234a7f12b7f78e1d4e6814406e3042 *inst/tests/test.MultiMahalanobis.r
+d4740ef05e420bc932705c840e85a02e *inst/tests/test.MultiMahalanobis.r
 223230760a09f3d2735898e388665452 *inst/tests/test.Normalize.r
 5311190aac7b5a8316982129dc3cd056 *inst/tests/test.PCScoreCorrelation.r
 e3f51b520a01cd48e4f3d967938a074d *inst/tests/test.PhyloCompare.r
