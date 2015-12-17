@@ -1,6 +1,6 @@
-d8b08152f23432e23a9a7e1aca16805f *DESCRIPTION
+dc6ec6f28f5563649308baee9837285d *DESCRIPTION
 a320fddb4345ecd48386118a42595c60 *LICENSE
-86e28389d97cf91bf23174e54c47b252 *NAMESPACE
+fc260b87fe2cbd69d1b758fcab41932c *NAMESPACE
 97ad10e1cfdb8a6865114e19ab666da7 *R/AlphaRep.R
 35bb9563657f86cebbbd867bee906f64 *R/AncestralStates.R
 b699e8812c13a9fd5d330014106aa557 *R/BootstrapRep.R
@@ -10,7 +10,7 @@ b699e8812c13a9fd5d330014106aa557 *R/BootstrapRep.R
 9625b249a207eed88789aebdcf60df6e *R/CalcRepeatability.R
 ed1d53aa793490eb133517f652aa98f8 *R/CalculateMatrix.R
 20fd0c476ba8d42d6ab17fc0c42dda6d *R/ComparisonMap.R
-b03c71acaa52e5dcaaa8dc31f0406b56 *R/DriftTest.R
+8b0a3294a7b17f121cc41f5ab87431f1 *R/DriftTest.R
 92ec85a2af02cbc5df5336afb5c1f77d *R/EvolQG.R
 2fb5da8d075e7d7d76d54011554484fe *R/ExtendMatrix.R
 28564a290fc3b0b5f63afa1b96f14635 *R/KrzCor.R
@@ -29,6 +29,7 @@ a98a8d5812aa97dca9a08930dfe9fd90 *R/PCAsimilarity.R
 c82a75e160fcb1b5d6a85dbd5f458a10 *R/PhyloCompare.R
 890747e5e090cf3ca78695eb5135ebe4 *R/PhyloW.R
 cfe80dc0f39b20ea9bbaaffe7f62c7ef *R/PrintMatrix.R
+e6313ed63df97d82184780ae51b41031 *R/RSProjection.R
 bcfa2c2e02a04dd7fd591d7c7043393d *R/RandomCorr.R
 82ba83719ec89c85e02e121632369e1d *R/RandomMatrix.R
 f4a0d811b853f0c3a3c2f4d7daf5a32c *R/RandomSkewers.R
@@ -52,12 +53,12 @@ e32d195706b5638b4bbce0873556bd7c *inst/tests/test.CalcR2.r
 7a30fda24d46fc0a68b1a34e913c3a81 *inst/tests/test.CalcR2CvCorrected.r
 baf8fb23c6b6b3e8f4cac861b990e422 *inst/tests/test.CalcRepeatability.r
 020122cd0f283a677b4ef5ec68e54326 *inst/tests/test.CalculateMatrix.r
-33673744c0b62c61e124a9bd80297ae5 *inst/tests/test.DriftTest.r
+cd7150a131f14f651e38b9797d38513f *inst/tests/test.DriftTest.r
 c45d52bb2c68f3860694dfb3def19054 *inst/tests/test.ExtendMatrix.r
 05ebc14698c57fa9d17e711703ed2896 *inst/tests/test.MatrixComparisons.r
 589ec4337a668ce94315e89316be2d4f *inst/tests/test.MatrixDistances.r
 613cd4bdb00aad9c9e8654c698d816d6 *inst/tests/test.MatrixStatistics.r
-f36ac918266142695dc10d01ab08f12c *inst/tests/test.MonteCarloStat.r
+e01267e68b817680e01c0938e5f37a98 *inst/tests/test.MonteCarloStat.r
 d4740ef05e420bc932705c840e85a02e *inst/tests/test.MultiMahalanobis.r
 223230760a09f3d2735898e388665452 *inst/tests/test.Normalize.r
 94056466f102be12203817d606516d1c *inst/tests/test.PCScoreCorrelation.r
@@ -102,6 +103,7 @@ aaa8030ef15f9e65db3d31c9f27af0bf *man/PCScoreCorrelation.Rd
 d3ef7f4d6991908fe66873b98575fd48 *man/PlotRarefaction.Rd
 55bc3102b6db2cc8bc9a4bf0f732770c *man/PlotTreeDriftTest.Rd
 6df199aa6482d99dfa94398a1681c83c *man/PrintMatrix.Rd
+36f3e20728a650931122676594b6c1af *man/RSProjection.Rd
 976810d37568328cbadccd6f0300d758 *man/RandCorr.Rd
 14e014880b05a2c53b3c08409a941933 *man/RandomMatrix.Rd
 6b05253866bd88d46316e4b27ba257a4 *man/RandomSkewers.Rd

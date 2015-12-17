@@ -21,6 +21,7 @@
 #'@export
 #'@import plyr
 #'@importFrom ggplot2 ggplot geom_text geom_smooth labs theme_bw aes_string
+#'@importFrom stats na.omit
 #'@examples
 #'
 #' #Input can be an array with means in each row or a list of mean vectors
@@ -136,6 +137,5 @@ PlotTreeDriftTest <- function(test.list, tree, ...){
 
 #'@importFrom phytools getDescendants
 getMeans <- function(mean.list, tree, node){
-  means <- mean.list[getDescendants(tree, node)]
-  means[!laply(means, is.null)]
+  means <- mean.list[na.omit(tree$tip.label[getDescendants(tree, node)])]
 }
