@@ -4,6 +4,7 @@
 \alias{RandomSkewers}
 \alias{RandomSkewers.default}
 \alias{RandomSkewers.list}
+\alias{RandomSkewers.mcmc_sample}
 \title{Compare matrices via RandomSkewers}
 \usage{
 RandomSkewers(cov.x, cov.y, ...)
@@ -12,6 +13,9 @@ RandomSkewers(cov.x, cov.y, ...)
 
 \method{RandomSkewers}{list}(cov.x, cov.y = NULL, num.vectors = 1000,
   repeat.vector = NULL, parallel = FALSE, ...)
+
+\method{RandomSkewers}{mcmc_sample}(cov.x, cov.y, num.vectors = 1000,
+  parallel = FALSE, ...)
 }
 \arguments{
 \item{cov.x}{Single covariance matrix or list of covariance matrices.
@@ -47,9 +51,9 @@ diagonal and repeatabilities returned in diagonal.
 Calculates covariance matrix correlation via random skewers
 }
 \examples{
-c1 <- RandomMatrix(10)
-c2 <- RandomMatrix(10)
-c3 <- RandomMatrix(10)
+c1 <- RandomMatrix(10, 1, 1, 10)
+c2 <- RandomMatrix(10, 1, 1, 10)
+c3 <- RandomMatrix(10, 1, 1, 10)
 RandomSkewers(c1, c2)
 
 RandomSkewers(list(c1, c2, c3))

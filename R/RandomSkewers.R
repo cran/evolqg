@@ -32,9 +32,9 @@
 #' @author Diogo Melo, Guilherme Garcia
 #' @seealso \code{\link{KrzCor}},\code{\link{MantelCor}}
 #' @examples
-#' c1 <- RandomMatrix(10)
-#' c2 <- RandomMatrix(10)
-#' c3 <- RandomMatrix(10)
+#' c1 <- RandomMatrix(10, 1, 1, 10)
+#' c2 <- RandomMatrix(10, 1, 1, 10)
+#' c3 <- RandomMatrix(10, 1, 1, 10)
 #' RandomSkewers(c1, c2)
 #'
 #' RandomSkewers(list(c1, c2, c3))
@@ -64,18 +64,7 @@ RandomSkewers <- function(cov.x, cov.y, ...) UseMethod("RandomSkewers")
 #' @rdname RandomSkewers
 #' @export
 RandomSkewers.default <- function (cov.x, cov.y, num.vectors = 1000, ...) {
-  traits <- dim (cov.x) [1]
-  base.vector <- Normalize(rnorm(traits))
-  random.vectors <- array (rnorm (num.vectors * traits, mean = 0, sd = 1), c(traits, num.vectors))
-  random.vectors <- apply (random.vectors, 2, Normalize)
-  dist <- base.vector %*% random.vectors
-  dz1 <- apply (cov.x %*% random.vectors, 2, Normalize)
-  dz2 <- apply (cov.y %*% random.vectors, 2, Normalize)
-  real <- apply (dz1 * dz2, 2, sum)
-  ac <- mean (real)
-  stdev <- sd (real)
-  prob <- sum (ac < dist) / num.vectors
-  output <- c(ac, prob, stdev)
+  output <- as.numeric(RS(cov.x, cov.y, num.vectors))
   names(output) <- c("correlation","probability","correlation_sd")
   return(output)
 }
@@ -94,6 +83,28 @@ RandomSkewers.list <- function (cov.x, cov.y = NULL, num.vectors = 1000, repeat.
     output <- SingleComparisonMap(cov.x, cov.y,
                                function(x, y) RandomSkewers(x, y, num.vectors),
                                parallel = parallel)
+  }
+  return(output)
+}
+
+#' @rdname RandomSkewers
+#' @method RandomSkewers mcmc_sample
+#' @export
+RandomSkewers.mcmc_sample <- function (cov.x, cov.y, num.vectors = 1000, parallel = FALSE, ...)
+{
+  if (class (cov.y) == "mcmc_sample") {
+    n = dim(cov.x)[1]
+    if(dim(cov.y)[1] != n) stop("samples must be of same size")
+    cov.x <- alply(cov.x, 1)
+    output <- aaply(1:n, 1, function(i) RandomSkewers(cov.x, 
+                                                      cov.y[i,,], 
+                                                      num.vectors = num.vectors)$correlation,
+                    .parallel = parallel)
+    output <- as.numeric(output)
+  } else{
+    output <- SingleComparisonMap(alply(cov.x, 1), cov.y,
+                                  function(x, y) RandomSkewers(x, y, num.vectors),
+                                  parallel = parallel)
   }
   return(output)
 }

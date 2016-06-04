@@ -49,7 +49,7 @@
 #'
 #'# For repeatabilities we can use MatrixCor, which skips the significance calculation
 #' reps <- unlist(lapply(cov.list, MonteCarloRep, 10, MatrixCor, correlation = TRUE))
-#' MantelCor(llply(cor.list, repeat.vector = reps))
+#' MantelCor(cor.list, repeat.vector = reps)
 #'
 #' c4 <- RandomMatrix(10)
 #' MantelCor(cor.list, c4)
@@ -118,6 +118,14 @@ MantelCor.list <- function (cor.x, cor.y = NULL,
   return(output)
 }
 
+#' @rdname MantelCor
+#' @method MantelCor mcmc_sample
+#' @export
+MantelCor.mcmc_sample <- function (cor.x, cor.y, ..., parallel = FALSE)
+{
+  MatrixCor(cor.x, cor.y, parallel)
+}
+
 #' @export
 #' @rdname MantelCor
 MatrixCor <- function (cor.x, cor.y, ...) UseMethod("MatrixCor")
@@ -129,7 +137,7 @@ MatrixCor.default <- function (cor.x, cor.y, ...)
 {
   if(sum(diag(cor.x)) != dim(cor.x)[1] | sum(diag(cor.y))!= dim(cor.y)[1])
     warning("Matrices do not appear to be correlation matrices. Use with caution.")
-  cor(cor.x[lower.tri(cor.x)], cor.y[lower.tri(cor.y)], ...)
+  c("correlations" = cor(cor.x[lower.tri(cor.x)], cor.y[lower.tri(cor.y)], ...))
 }
 
 #' @rdname MantelCor
@@ -147,6 +155,27 @@ MatrixCor.list <- function (cor.x, cor.y = NULL,
   } else{
     output <- SingleComparisonMap(cor.x, cor.y,
                                   function(x, y) MatrixCor(x, y),                                                    
+                                  parallel = parallel)
+  }
+  return(output)
+}
+
+#' @rdname MantelCor
+#' @method MatrixCor mcmc_sample
+#' @export
+MatrixCor.mcmc_sample <- function (cor.x, cor.y, ..., parallel = FALSE)
+{
+  if (class (cor.y) == "mcmc_sample") {
+    n = dim(cor.x)[1]
+    if(dim(cor.y)[1] != n) stop("samples must be of same size")
+    cor.x <- alply(cor.x, 1, cov2cor)
+    output <- aaply(1:n, 1, function(i) MatrixCor(cor.x, 
+                                                  cov2cor(cor.y[i,,]))$correlation,
+                    .parallel = parallel)
+    output <- as.numeric(output)
+  } else{
+    output <- SingleComparisonMap(alply(cor.x, 1), cor.y,
+                                  function(x, y) MatrixCor(x, y),
                                   parallel = parallel)
   }
   return(output)

@@ -30,9 +30,9 @@
 #' @author Diogo Melo, Guilherme Garcia
 #' @seealso \code{\link{RandomSkewers}},\code{\link{KrzProjection}},\code{\link{MantelCor}}
 #' @examples
-#' c1 <- RandomMatrix(10)
-#' c2 <- RandomMatrix(10)
-#' c3 <- RandomMatrix(10)
+#' c1 <- RandomMatrix(10, 1, 1, 10)
+#' c2 <- RandomMatrix(10, 1, 1, 10)
+#' c3 <- RandomMatrix(10, 1, 1, 10)
 #' KrzCor(c1, c2)
 #'
 #' KrzCor(list(c1, c2, c3))
@@ -67,7 +67,7 @@ KrzCor.default <- function (cov.x, cov.y, ret.dim = NULL, ...) {
   eVec.x <- eigen(cov.x)$vectors
   eVec.y <- eigen(cov.y)$vectors
 
-  return (sum((t(eVec.x[,1:ret.dim]) %*% (eVec.y[,1:ret.dim]))**2)/ret.dim)
+  return (c("krz" = sum((t(eVec.x[,1:ret.dim]) %*% (eVec.y[,1:ret.dim]))**2)/ret.dim))
 }
 
 #' @rdname KrzCor
@@ -87,6 +87,28 @@ KrzCor.list <- function (cov.x, cov.y = NULL,
                          function(x, y) return(c(KrzCor(x, y, ret.dim), NA)),
                                parallel = parallel)
     output <- output[,-length(output)]
+  }
+  return(output)
+}
+
+#' @rdname KrzCor
+#' @method KrzCor mcmc_sample
+#' @export
+KrzCor.mcmc_sample <- function (cov.x, cov.y, ret.dim = NULL, parallel = FALSE, ...)
+{
+  if (class (cov.y) == "mcmc_sample") {
+    n = dim(cov.x)[1]
+    if(dim(cov.y)[1] != n) stop("samples must be of same size")
+    cov.x <- alply(cov.x, 1)
+    output <- aaply(1:n, 1, function(i) KrzCor(cov.x, 
+                                               cov.y[i,,], 
+                                               ret.dim = ret.dim)$krz,
+                    .parallel = parallel)
+    output <- as.numeric(output)
+  } else{
+    output <- SingleComparisonMap(alply(cov.x, 1), cov.y,
+                                  function(x, y) KrzCor(x, y, ret.dim),
+                                  parallel = parallel)
   }
   return(output)
 }
