@@ -3,7 +3,8 @@
 #' This function performs eigentensor decomposition on a set of covariance matrices.
 #'
 #' @param matrices k x k x m array of m covariance matrices with k traits;
-#' @param return.projection Should we project covariance matrices into estimated eigentensors? Defaults to TRUE.
+#' @param return.projection Should we project covariance matrices into estimated eigentensors? Defaults to TRUE
+#' @param ... aditional arguments for methods
 #' @return List with the following components:
 #' @return mean mean covariance matrices used to center the sample (obtained from \code{\link{MeanMatrix}})
 #' @return mean.sqrt square root of mean matrix (saved for use in other functions, 
@@ -29,7 +30,7 @@
 #' \dontrun{
 #' data(dentus)
 #'
-#' dentus.vcv <- daply (dentus, .(species), function(x) var(x[,-5]))
+#' dentus.vcv <- daply (dentus, .(species), function(x) cov(x[,-5]))
 #'
 #' dentus.vcv <- aperm(dentus.vcv, c(2, 3, 1))
 #'
@@ -70,25 +71,24 @@
 #' @rdname EigenTensorDecomposition 
 #' @export
 #'
-EigenTensorDecomposition <- function (matrices, return.projection = TRUE) UseMethod('EigenTensorDecomposition')
+EigenTensorDecomposition <- function (matrices, return.projection = TRUE, ...) UseMethod('EigenTensorDecomposition')
 
 #' @rdname EigenTensorDecomposition
 #' @method EigenTensorDecomposition list
 #' @export
-EigenTensorDecomposition.list <- function (matrices, return.projection = TRUE)
+EigenTensorDecomposition.list <- function (matrices, return.projection = TRUE, ...)
   {
     list2array <- laply(matrices, function(L) L)
     list2array <- aperm (list2array, c (2, 3, 1))
-    EigenTensorDecomposition(list2array, return.projection)
+    EigenTensorDecomposition(list2array, return.projection, ...)
   }
 
 #' @rdname EigenTensorDecomposition
 #' @method EigenTensorDecomposition default
 #' @export
-EigenTensorDecomposition.default <-
-  function (matrices, return.projection = TRUE)
+EigenTensorDecomposition.default <- function (matrices, return.projection = TRUE, ...)
   {
-    mean.matrix <- MeanMatrix(matrices)
+    mean.matrix <- MeanMatrix(matrices, ...)
     mean.sqrt <- sqrtm(mean.matrix)
     mean.is <- solve(mean.sqrt)
     lce.array <- aaply(matrices, 3, 

@@ -32,7 +32,7 @@ Constructs a covariance matrix based on scores over covariance matrix eigentenso
 
 data(dentus)
 
-dentus.vcv <- daply (dentus, .(species), function(x) var(x[,-5]))
+dentus.vcv <- daply (dentus, .(species), function(x) cov(x[,-5]))
 
 dentus.vcv <- aperm(dentus.vcv, c(2, 3, 1))
 
@@ -67,4 +67,3 @@ Hine E., Chenoweth S. F., Rundle H. D., Blows M. W. 2009. Characterizing
 the evolution of genetic variance using genetic covariance tensors. Philosophical 
 transactions of the Royal Society of London. Series B, Biological sciences. 364:1567-78.
 }
-
