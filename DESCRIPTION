@@ -1,8 +1,8 @@
 Package: evolqg
 Type: Package
 Title: Tools for Evolutionary Quantitative Genetics
-Version: 0.2-5
-Date: 2017-02-02
+Version: 0.2-6
+Date: 2019-04-08
 Author: Ana Paula Assis, Diogo Melo, Edgar Zanella, Fabio Machado, Guilherme
     Garcia
 Maintainer: Diogo Melo <diogro@usp.br>
@@ -17,8 +17,9 @@ Suggests: testthat, foreach, magrittr, grid, gridExtra, doParallel
 LinkingTo: Rcpp, RcppArmadillo
 License: MIT + file LICENSE
 BugReports: https://github.com/lem-usp/evolqg/issues
-RoxygenNote: 6.0.0
+Encoding: UTF-8
+RoxygenNote: 6.1.1
 NeedsCompilation: yes
-Packaged: 2017-02-01 21:09:28 UTC; diogro
+Packaged: 2019-04-08 17:37:56 UTC; diogro
 Repository: CRAN
-Date/Publication: 2017-02-02 01:04:50
+Date/Publication: 2019-04-08 18:42:54 UTC
