@@ -39,7 +39,7 @@
 #' RandomSkewers(c1, c2)
 #'
 #' RandomSkewers(list(c1, c2, c3))
-#'
+#'\dontrun{
 #' reps <- unlist(lapply(list(c1, c2, c3), MonteCarloRep, sample.size = 10,
 #'                                         RandomSkewers, num.vectors = 100, 
 #'                                         iterations = 10))
@@ -47,7 +47,7 @@
 #'
 #' c4 <- RandomMatrix(10)
 #' RandomSkewers(list(c1, c2, c3), c4)
-#' 
+#' }
 #' #Multiple threads can be used with some foreach backend library, like doMC or doParallel
 #' #library(doParallel)
 #' ##Windows:
@@ -64,7 +64,7 @@ RandomSkewers <- function(cov.x, cov.y, ...) UseMethod("RandomSkewers")
 
 #' @rdname RandomSkewers
 #' @export
-RandomSkewers.default <- function (cov.x, cov.y, num.vectors = 1000, ...) {
+RandomSkewers.default <- function (cov.x, cov.y, num.vectors = 10000, ...) {
   output <- as.numeric(RS(cov.x, cov.y, num.vectors))
   names(output) <- c("correlation","probability","correlation_sd")
   return(output)
@@ -73,7 +73,7 @@ RandomSkewers.default <- function (cov.x, cov.y, num.vectors = 1000, ...) {
 #' @rdname RandomSkewers
 #' @method RandomSkewers list
 #' @export
-RandomSkewers.list <- function (cov.x, cov.y = NULL, num.vectors = 1000, repeat.vector = NULL, parallel = FALSE, ...)
+RandomSkewers.list <- function (cov.x, cov.y = NULL, num.vectors = 10000, repeat.vector = NULL, parallel = FALSE, ...)
 {
   if (is.null (cov.y)) {
     output <- ComparisonMap(cov.x,
@@ -91,7 +91,7 @@ RandomSkewers.list <- function (cov.x, cov.y = NULL, num.vectors = 1000, repeat.
 #' @rdname RandomSkewers
 #' @method RandomSkewers mcmc_sample
 #' @export
-RandomSkewers.mcmc_sample <- function (cov.x, cov.y, num.vectors = 1000, parallel = FALSE, ...)
+RandomSkewers.mcmc_sample <- function (cov.x, cov.y, num.vectors = 10000, parallel = FALSE, ...)
 {
   if (class (cov.y) == "mcmc_sample") {
     n = dim(cov.x)[1]

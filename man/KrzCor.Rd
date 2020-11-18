@@ -11,11 +11,16 @@ KrzCor(cov.x, cov.y, ...)
 
 \method{KrzCor}{default}(cov.x, cov.y, ret.dim = NULL, ...)
 
-\method{KrzCor}{list}(cov.x, cov.y = NULL, ret.dim = NULL,
-  repeat.vector = NULL, parallel = FALSE, ...)
+\method{KrzCor}{list}(
+  cov.x,
+  cov.y = NULL,
+  ret.dim = NULL,
+  repeat.vector = NULL,
+  parallel = FALSE,
+  ...
+)
 
-\method{KrzCor}{mcmc_sample}(cov.x, cov.y, ret.dim = NULL,
-  parallel = FALSE, ...)
+\method{KrzCor}{mcmc_sample}(cov.x, cov.y, ret.dim = NULL, parallel = FALSE, ...)
 }
 \arguments{
 \item{cov.x}{Single covariance matrix or list of covariance matrices.
@@ -56,13 +61,13 @@ c3 <- RandomMatrix(10, 1, 1, 10)
 KrzCor(c1, c2)
 
 KrzCor(list(c1, c2, c3))
-
+\dontrun{
 reps <- unlist(lapply(list(c1, c2, c3), MonteCarloRep, 10, KrzCor, iterations = 10))
 KrzCor(list(c1, c2, c3), repeat.vector = reps)
 
 c4 <- RandomMatrix(10)
 KrzCor(list(c1, c2, c3), c4)
-
+}
 #Multiple threads can be used with some foreach backend library, like doMC or doParallel
 #library(doParallel)
 ##Windows:

@@ -9,13 +9,18 @@
 \usage{
 RandomSkewers(cov.x, cov.y, ...)
 
-\method{RandomSkewers}{default}(cov.x, cov.y, num.vectors = 1000, ...)
+\method{RandomSkewers}{default}(cov.x, cov.y, num.vectors = 10000, ...)
 
-\method{RandomSkewers}{list}(cov.x, cov.y = NULL, num.vectors = 1000,
-  repeat.vector = NULL, parallel = FALSE, ...)
+\method{RandomSkewers}{list}(
+  cov.x,
+  cov.y = NULL,
+  num.vectors = 10000,
+  repeat.vector = NULL,
+  parallel = FALSE,
+  ...
+)
 
-\method{RandomSkewers}{mcmc_sample}(cov.x, cov.y, num.vectors = 1000,
-  parallel = FALSE, ...)
+\method{RandomSkewers}{mcmc_sample}(cov.x, cov.y, num.vectors = 10000, parallel = FALSE, ...)
 }
 \arguments{
 \item{cov.x}{Single covariance matrix or list of covariance matrices.
@@ -57,7 +62,7 @@ c3 <- RandomMatrix(10, 1, 1, 10)
 RandomSkewers(c1, c2)
 
 RandomSkewers(list(c1, c2, c3))
-
+\dontrun{
 reps <- unlist(lapply(list(c1, c2, c3), MonteCarloRep, sample.size = 10,
                                         RandomSkewers, num.vectors = 100, 
                                         iterations = 10))
@@ -65,7 +70,7 @@ RandomSkewers(list(c1, c2, c3), repeat.vector = reps)
 
 c4 <- RandomMatrix(10)
 RandomSkewers(list(c1, c2, c3), c4)
-
+}
 #Multiple threads can be used with some foreach backend library, like doMC or doParallel
 #library(doParallel)
 ##Windows:

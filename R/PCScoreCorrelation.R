@@ -24,12 +24,13 @@
 #'taxons = LETTERS[1:10]
 #'PCScoreCorrelation(means, cov.matrix, taxons)
 #'
-#'##Plots list can be displayed using grid.arrange()
-#'#library(gridExtra)
-#'#pc.score.output <- PCScoreCorrelation(means, cov.matrix, taxons, TRUE)
-#'#do.call(grid.arrange, c(pc.score.output$plots,list(nrow=4,ncol=6)))
-#'##Or we can print to file:
-#'#ggsave("multipage.pdf", do.call(marrangeGrob, c(pc.score.output$plots, list(nrow=2, ncol=2))))
+#'\dontrun{
+#'##Plots list can be displayed using plot_grid()
+#'library(cowplot)
+#'pc.score.output <- PCScoreCorrelation(means, cov.matrix, taxons, TRUE)
+#'plot_grid(plotlist = pc.score.output$plots)
+#'}
+
 PCScoreCorrelation <- function(means, cov.matrix, taxons = names(means), show.plots = FALSE){
   if(is.data.frame(means) | (!is.array(means) & !is.list(means)))
     stop("means must be in a list or an array.")

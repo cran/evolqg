@@ -4,8 +4,7 @@
 \alias{BayesianCalculateMatrix}
 \title{Calculate Covariance Matrix from a linear model fitted with lm() using different estimators}
 \usage{
-BayesianCalculateMatrix(linear.m, samples = NULL, ..., nu = NULL,
-  S_0 = NULL)
+BayesianCalculateMatrix(linear.m, samples = NULL, ..., nu = NULL, S_0 = NULL)
 }
 \arguments{
 \item{linear.m}{Linear model adjusted for original data}
@@ -16,7 +15,7 @@ BayesianCalculateMatrix(linear.m, samples = NULL, ..., nu = NULL,
 
 \item{nu}{degrees of freedom in prior distribution, defaults to the number of traits (this can be a too strong prior)}
 
-\item{S_0}{cross product matrix of the prior. Default is to use the observed voriances and zero covariances}
+\item{S_0}{cross product matrix of the prior. Default is to use the observed variances and zero covariance}
 }
 \value{
 Estimated covariance matrices and posterior samples

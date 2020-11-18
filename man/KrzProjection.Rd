@@ -8,11 +8,17 @@
 \usage{
 KrzProjection(cov.x, cov.y, ...)
 
-\method{KrzProjection}{default}(cov.x, cov.y, ret.dim.1 = NULL,
-  ret.dim.2 = NULL, ...)
+\method{KrzProjection}{default}(cov.x, cov.y, ret.dim.1 = NULL, ret.dim.2 = NULL, ...)
 
-\method{KrzProjection}{list}(cov.x, cov.y = NULL, ret.dim.1 = NULL,
-  ret.dim.2 = NULL, parallel = FALSE, full.results = FALSE, ...)
+\method{KrzProjection}{list}(
+  cov.x,
+  cov.y = NULL,
+  ret.dim.1 = NULL,
+  ret.dim.2 = NULL,
+  parallel = FALSE,
+  full.results = FALSE,
+  ...
+)
 }
 \arguments{
 \item{cov.x}{Single covariance matrix ou list of covariance matrices.
@@ -47,6 +53,7 @@ c1 <- RandomMatrix(10)
 c2 <- RandomMatrix(10)
 KrzProjection(c1, c2)
 
+\dontrun{
 m.list <- RandomMatrix(10, 3)
 KrzProjection(m.list)
 KrzProjection(m.list, full.results = TRUE)
@@ -55,7 +62,7 @@ KrzProjection(m.list, ret.dim.1 = 4, ret.dim.2 = 5)
 
 KrzProjection(m.list, c1)
 KrzProjection(m.list, c1, full.results = TRUE)
-
+}
 #Multiple threads can be used with some foreach backend library, like doMC or doParallel
 #library(doParallel)
 ##Windows:

@@ -31,6 +31,7 @@
 #' c2 <- RandomMatrix(10)
 #' KrzProjection(c1, c2)
 #'
+#'\dontrun{
 #' m.list <- RandomMatrix(10, 3)
 #' KrzProjection(m.list)
 #' KrzProjection(m.list, full.results = TRUE)
@@ -39,7 +40,7 @@
 #'
 #' KrzProjection(m.list, c1)
 #' KrzProjection(m.list, c1, full.results = TRUE)
-#' 
+#' }
 #' #Multiple threads can be used with some foreach backend library, like doMC or doParallel
 #' #library(doParallel)
 #' ##Windows:

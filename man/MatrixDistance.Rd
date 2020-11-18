@@ -8,11 +8,15 @@
 \usage{
 MatrixDistance(cov.x, cov.y, distance, ...)
 
-\method{MatrixDistance}{default}(cov.x, cov.y,
-  distance = c("OverlapDist", "RiemannDist"), ...)
+\method{MatrixDistance}{default}(cov.x, cov.y, distance = c("OverlapDist", "RiemannDist"), ...)
 
-\method{MatrixDistance}{list}(cov.x, cov.y = NULL,
-  distance = c("OverlapDist", "RiemannDist"), ..., parallel = FALSE)
+\method{MatrixDistance}{list}(
+  cov.x,
+  cov.y = NULL,
+  distance = c("OverlapDist", "RiemannDist"),
+  ...,
+  parallel = FALSE
+)
 }
 \arguments{
 \item{cov.x}{Single covariance matrix or list of covariance matrices.
@@ -46,12 +50,13 @@ c2 <- RandomMatrix(10)
 c3 <- RandomMatrix(10)
 MatrixDistance(c1, c2, "OverlapDist")
 MatrixDistance(c1, c2, "RiemannDist")
-
+\dontrun{
 MatrixDistance(list(c1, c2, c3), distance = "OverlapDist")
 
 
 c4 <- RandomMatrix(10)
 MatrixDistance(list(c1, c2, c3), c4)
+}
 }
 \seealso{
 \code{\link{RiemannDist}},\code{\link{OverlapDist}}

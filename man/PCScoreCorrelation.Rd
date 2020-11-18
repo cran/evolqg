@@ -4,8 +4,12 @@
 \alias{PCScoreCorrelation}
 \title{PC Score Correlation Test}
 \usage{
-PCScoreCorrelation(means, cov.matrix, taxons = names(means),
-  show.plots = FALSE)
+PCScoreCorrelation(
+  means,
+  cov.matrix,
+  taxons = names(means),
+  show.plots = FALSE
+)
 }
 \arguments{
 \item{means}{list or array of species means being compared. array must have means in the rows.}
@@ -35,12 +39,12 @@ cov.matrix = RandomMatrix(40, 1, 1, 10)
 taxons = LETTERS[1:10]
 PCScoreCorrelation(means, cov.matrix, taxons)
 
-##Plots list can be displayed using grid.arrange()
-#library(gridExtra)
-#pc.score.output <- PCScoreCorrelation(means, cov.matrix, taxons, TRUE)
-#do.call(grid.arrange, c(pc.score.output$plots,list(nrow=4,ncol=6)))
-##Or we can print to file:
-#ggsave("multipage.pdf", do.call(marrangeGrob, c(pc.score.output$plots, list(nrow=2, ncol=2))))
+\dontrun{
+##Plots list can be displayed using plot_grid()
+library(cowplot)
+pc.score.output <- PCScoreCorrelation(means, cov.matrix, taxons, TRUE)
+plot_grid(plotlist = pc.score.output$plots)
+}
 }
 \references{
 Marroig, G., and Cheverud, J. M. (2004). Did natural selection or genetic drift 
