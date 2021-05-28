@@ -24,21 +24,21 @@ RandomSkewers(cov.x, cov.y, ...)
 }
 \arguments{
 \item{cov.x}{Single covariance matrix or list of covariance matrices.
-If single matrix is suplied, it is compared to cov.y.
-If list is suplied and no cov.y is suplied, all matrices
+If single matrix is supplied, it is compared to cov.y.
+If list is supplied and no cov.y is supplied, all matrices
 are compared.
-If cov.y is suplied, all matrices in list are compared to it.}
+If cov.y is supplied, all matrices in list are compared to it.}
 
 \item{cov.y}{First argument is compared to cov.y.
 Optional if cov.x is a list.}
 
-\item{...}{aditional arguments passed to other methods.}
+\item{...}{additional arguments passed to other methods.}
 
 \item{num.vectors}{Number of random vectors used in comparison.}
 
 \item{repeat.vector}{Vector of repeatabilities for correlation correction.}
 
-\item{parallel}{if TRUE computations are done in parallel. Some foreach backend must be registered, like doParallel or doMC.}
+\item{parallel}{if TRUE computations are done in parallel. Some foreach back-end must be registered, like doParallel or doMC.}
 }
 \value{
 If cov.x and cov.y are passed, returns average value
