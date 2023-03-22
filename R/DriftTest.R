@@ -20,7 +20,7 @@
 #'@author Ana Paula Assis, Diogo Melo
 #'@export
 #'@import plyr
-#'@importFrom ggplot2 ggplot geom_text geom_smooth labs theme_bw aes_string
+#'@importFrom ggplot2 ggplot geom_text geom_smooth labs theme_bw 
 #'@importFrom stats na.omit
 #'@examples
 #'
@@ -47,8 +47,8 @@ DriftTest <- function(means, cov.matrix, show.plot=TRUE)
   reg.plot <- ggplot(data.frame(log.B_variance, 
                                 log.W_eVals, 
                                 names = 1:(dim(mean.array)[2])), 
-                     aes_string('log.W_eVals', 'log.B_variance')) + 
-              geom_text(aes_string(label = 'names')) + 
+                     aes(log.W_eVals, log.B_variance)) + 
+              geom_text(aes(label = names)) + 
               geom_smooth(method = "lm", color = 'black') + 
               labs(x = "log(W Eigenvalues)", y = "log(B variances)") + theme_bw()
   if(show.plot) print(reg.plot)
@@ -111,6 +111,7 @@ TreeDriftTest <- function(tree, mean.list, cov.matrix.list, sample.sizes = NULL)
 #'@param test.list Output from TreeDriftTest
 #'@param tree phylogenetic tree
 #'@param ... adition arguments to plot
+#'@return No return value, called for plot side effects
 #'@seealso DriftTest TreeDriftTest
 #'@importFrom ape nodelabels
 #'@author Diogo Melo
