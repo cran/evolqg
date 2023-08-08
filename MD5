@@ -1,4 +1,4 @@
-0ee48680a17fc0ecbffb9ce4b19ff704 *DESCRIPTION
+2e027be8a8b6e52e1576470da62016a4 *DESCRIPTION
 a320fddb4345ecd48386118a42595c60 *LICENSE
 79c4c713d39a93c3af609c538ebeaa1b *NAMESPACE
 fe0cbecf5b75e74e11519f74a4a99490 *R/AlphaRep.R
@@ -25,7 +25,7 @@ bd22f442972e0829ed5a9312cbdce5cf *R/KrzSubspaceBootstrap.R
 19b5e3b29fb017eb70c19be82d05fceb *R/MantelModTest.R
 b31ce24b70c7d1d07b8e8e2a8ca6bc71 *R/MatrixCompare.R
 57e6652df0df9b4867217878979d4221 *R/MatrixDistance.R
-b11a8383e5b16e1fab8c05979d75874c *R/MatrixStatistics.R
+e49bef198210525e5cf52f0ca20a8d1e *R/MatrixStatistics.R
 cd875de47ec95608959e9ec7a4fba5ac *R/MeanMatrix.R
 2f5622ece7c572c11d658d81c04f322e *R/MonteCarloStat.R
 9f1577d3991aa050f30539dd07be5359 *R/MultiMahalanobis.R

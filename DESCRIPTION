@@ -1,8 +1,8 @@
 Package: evolqg
 Type: Package
 Title: Evolutionary Quantitative Genetics
-Version: 0.3-2
-Date: 2023-03-21
+Version: 0.3-3
+Date: 2023-08-08
 Authors@R: 
   c(person(given = "Diogo",
            family = "Melo",
@@ -15,11 +15,11 @@ Authors@R:
     person(given = "Edgar",
            family = "Zanella",
            role = "ctb"),
-    person(given = "Fabio ",
+    person(given = "Fabio",
            family = "Andrade Machado",
            role = "aut",
            comment = c(ORCID = "0000-0002-0215-9926")),
-    person(given = "Guilherme ",
+    person(given = "Guilherme",
            family = "Garcia",
            role = "aut"),
     person(given = "Alex",
@@ -44,7 +44,7 @@ BugReports: https://github.com/lem-usp/evolqg/issues
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 NeedsCompilation: yes
-Packaged: 2023-03-22 01:50:23 UTC; diogro
+Packaged: 2023-08-08 16:22:21 UTC; diogro
 Author: Diogo Melo [aut, cre] (<https://orcid.org/0000-0002-7603-0092>),
   Ana Paula Assis [aut],
   Edgar Zanella [ctb],
@@ -54,4 +54,4 @@ Author: Diogo Melo [aut, cre] (<https://orcid.org/0000-0002-7603-0092>),
   Gabriel Marroig [ths] (<https://orcid.org/0000-0003-2542-2034>)
 Maintainer: Diogo Melo <diogro@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-03-22 16:50:17 UTC
+Date/Publication: 2023-08-08 16:50:02 UTC
