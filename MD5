@@ -1,4 +1,4 @@
-2e027be8a8b6e52e1576470da62016a4 *DESCRIPTION
+ca2dc5589f3038233541527ddd26e2c3 *DESCRIPTION
 a320fddb4345ecd48386118a42595c60 *LICENSE
 79c4c713d39a93c3af609c538ebeaa1b *NAMESPACE
 fe0cbecf5b75e74e11519f74a4a99490 *R/AlphaRep.R
@@ -14,7 +14,7 @@ fe0cbecf5b75e74e11519f74a4a99490 *R/AlphaRep.R
 46b98692686616c9fe9d9e912840ea0e *R/CreateHypotMatrix.R
 6ce99d727c7041dd852c8d1076c5ffc7 *R/DriftTest.R
 32b6acf6eedd6c33e7717901c002f5b7 *R/EigenTensorDecomposition.R
-59c4d312e7e761329ef28a361fa92e9b *R/EvolQG.R
+7f779044c8650a4ca41361b6d845f722 *R/EvolQG.R
 e2219a5b03e5ab5d557bdabf2cb68ea2 *R/ExtendMatrix.R
 9263a902706c2b1bf07780ec8de34e2d *R/KrzCor.R
 a9e61b9bd662315e180549c6356a1d0b *R/KrzProjection.R
@@ -128,7 +128,7 @@ b7835fd505af4e53533753d44a04c4e5 *man/TPS.Rd
 1d1e1009ebb370668c57b453abe41ef1 *man/TreeDriftTest.Rd
 105e344c00b1ab6519a51a26ff875f4f *man/dentus.Rd
 67802cc362c406edf77b57f43a1ab224 *man/dentus.tree.Rd
-83c056c87560644e6d36ebc07d00537e *man/evolqg.Rd
+f100fbc477532fb337368346721f7751 *man/evolqg.Rd
 9836ec75c58547d3f629e4a8a4851ddb *man/ratones.Rd
 2a6f9e9e044a78154d3cfda5936d6f48 *src/Makevars
 8d46d69896a1f1d31ed76035a0e49d67 *src/Makevars.win
@@ -145,7 +145,7 @@ e32d195706b5638b4bbce0873556bd7c *tests/testthat/test.CalcR2.r
 7a30fda24d46fc0a68b1a34e913c3a81 *tests/testthat/test.CalcR2CvCorrected.r
 baf8fb23c6b6b3e8f4cac861b990e422 *tests/testthat/test.CalcRepeatability.r
 eb326b5496195c1a1cf083b2df529704 *tests/testthat/test.CalculateMatrix.r
-3a6ba265d01f71381795a2fcd3b82679 *tests/testthat/test.DriftTest.r
+a9ec263cc34590f015168d457eed0953 *tests/testthat/test.DriftTest.r
 7435e4f1299a77755df6402cc719f796 *tests/testthat/test.ExtendMatrix.r
 e9d36ceb63f9c91ad5c625e046dca518 *tests/testthat/test.KrzSubspace.r
 cbfb8b0ff98a0cbc3439a1765ab2232d *tests/testthat/test.LModularity.r
