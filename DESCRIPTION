@@ -1,8 +1,8 @@
 Package: evolqg
 Type: Package
 Title: Evolutionary Quantitative Genetics
-Version: 0.3-4
-Date: 2023-11-29
+Version: 0.3-6
+Date: 2025-09-05
 Authors@R: 
   c(person(given = "Diogo",
            family = "Melo",
@@ -42,16 +42,17 @@ LinkingTo: Rcpp, RcppArmadillo
 License: MIT + file LICENSE
 BugReports: https://github.com/lem-usp/evolqg/issues
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 NeedsCompilation: yes
-Packaged: 2023-11-29 16:03:22 UTC; diogro
-Author: Diogo Melo [aut, cre] (<https://orcid.org/0000-0002-7603-0092>),
+Packaged: 2025-09-05 20:50:11 UTC; diogro
+Author: Diogo Melo [aut, cre] (ORCID: <https://orcid.org/0000-0002-7603-0092>),
   Ana Paula Assis [aut],
   Edgar Zanella [ctb],
-  Fabio Andrade Machado [aut] (<https://orcid.org/0000-0002-0215-9926>),
+  Fabio Andrade Machado [aut] (ORCID:
+    <https://orcid.org/0000-0002-0215-9926>),
   Guilherme Garcia [aut],
-  Alex Hubbe [rev] (<https://orcid.org/0000-0002-3226-0144>),
-  Gabriel Marroig [ths] (<https://orcid.org/0000-0003-2542-2034>)
+  Alex Hubbe [rev] (ORCID: <https://orcid.org/0000-0002-3226-0144>),
+  Gabriel Marroig [ths] (ORCID: <https://orcid.org/0000-0003-2542-2034>)
 Maintainer: Diogo Melo <diogro@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-12-05 15:20:12 UTC
+Date/Publication: 2025-09-05 21:00:02 UTC
